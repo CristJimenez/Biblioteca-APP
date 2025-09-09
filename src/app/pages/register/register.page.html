@@ -8,24 +8,20 @@
         <ion-grid>
           <ion-row>
             <ion-col>
-              <ion-input
+              <app-input
               type="text"
               label="Name"
-              labelPlacement="stacked"
               placeholder="Jane"
-              fill="solid"
-              formControlName="name"
-              ></ion-input>
+              [control]="name"
+              ></app-input>
             </ion-col>
             <ion-col>
-              <ion-input
+              <app-input
               type="text"
               label="Last Name"
-              labelPlacement="stacked"
-              placeholder="jane@doe.com"
-              fill="solid"
-              formControlName="lastName"
-              ></ion-input>
+              placeholder="Doe"
+              [control]="lastName"
+              ></app-input>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -45,36 +41,45 @@
           </ion-row>
           <ion-row>
             <ion-col>
-              <ion-input
+              <app-input
               type="email"
               label="Email"
-              labelPlacement="stacked"
               placeholder="jane@doe.com"
-              fill="solid"
-              formControlName="email"
-              ></ion-input>
+              errorText="Invalid email"
+              [control]="email"
+              ></app-input>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col>
-              <ion-input
+              <app-input
               type="password"
               label="Password"
-              labelPlacement="stacked"
               placeholder="*************"
-              fill="solid"
-              formControlName="password"
-              ></ion-input>
+              errorText="Invalid password"
+              [control]="password"
+              ></app-input>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col>
-              <ion-button
+              <app-input
+              type="password"
+              label="Confirm Password"
+              placeholder="*************"
+              errorText="Invalid password"
+              [control]="password"
+              ></app-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <app-button
               type="submit"
+              color="success"
               [disabled]="registerForm.invalid"
-              >
-              Register
-              </ion-button>
+              value="Register"
+              ></app-button>
             </ion-col>
           </ion-row>
         </ion-grid>
