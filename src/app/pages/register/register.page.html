@@ -1,8 +1,7 @@
 <ion-content [fullscreen]="true">
   <form 
   [formGroup]="registerForm"
-  (ngSubmit)="doRegister()"
-  >
+  (ngSubmit)="doRegister()">
     <ion-card>
       <ion-card-content>
         <ion-grid>
@@ -70,6 +69,11 @@
               errorText="Invalid password"
               [control]="password"
               ></app-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <a [routerLink]="['/']">Do you have account?</a>
             </ion-col>
           </ion-row>
           <ion-row>

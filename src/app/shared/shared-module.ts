@@ -5,8 +5,9 @@ import { Auth } from './services/auth/auth';
 import { InputComponent } from './components/input/input.component';
 import { IonicModule } from "@ionic/angular";
 import { ButtonComponent } from './components/button/button.component';
+import { RouterModule } from '@angular/router';
 
-const modules = [ FormsModule, ReactiveFormsModule ]
+const modules = [ FormsModule, ReactiveFormsModule, IonicModule, RouterModule ]
 const services = [ Auth ]
 const components = [ InputComponent, ButtonComponent ]
 

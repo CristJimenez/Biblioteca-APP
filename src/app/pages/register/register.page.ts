@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,9 @@ export class RegisterPage implements OnInit {
   public password!: FormControl;
   public registerForm!: FormGroup;
 
-  constructor() {
+  constructor(
+    private readonly router: Router
+  ) {
     this.initForm();
   }
 
@@ -25,6 +28,7 @@ export class RegisterPage implements OnInit {
   public doRegister() {
     console.log(this.registerForm.value);
     this.registerForm.reset();
+    this.router.navigate(['/']);
   }
 
   private initForm() {
