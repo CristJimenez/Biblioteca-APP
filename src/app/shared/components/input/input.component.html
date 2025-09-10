@@ -5,6 +5,7 @@
 [placeholder]="placeholder"
 labelPlacement="stacked"
 fill="solid"
+(keyup)="onType($event)"
 >
 @if (type === 'password') {
     <ion-input-password-toggle slot="end"></ion-input-password-toggle>

@@ -22,4 +22,8 @@ export class InputComponent  implements OnInit {
 
   ngOnInit() {}
 
+  public onType(event: any) {
+    this.control.setValue(event.target.value);
+  }
+
 }
