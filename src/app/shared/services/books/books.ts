@@ -14,7 +14,7 @@ export class Books {
   ) {}
 
   getBooks() {
-    return this.httpProv.getUrl(this.apiUrl);
+    return this.httpProv.getUrl<any>(this.apiUrl).then(data => data.results);
   }
   
 }

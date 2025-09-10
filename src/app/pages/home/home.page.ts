@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IBook } from 'src/app/interfaces/book.interface';
+import { Books } from 'src/app/shared/services/books/books';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor(
-    
-  ) { }
+  public books: IBook[] = [];
 
-  ngOnInit() {
+  constructor(
+    private booksSrv: Books
+  ) {}
+
+  async ngOnInit() {
+    this.books = await this.booksSrv.getBooks();
+    console.log(this.books);
   }
 
 }
