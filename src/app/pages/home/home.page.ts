@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IBook } from 'src/app/interfaces/book.interface';
+import { Auth } from 'src/app/shared/services/auth/auth';
 import { Books } from 'src/app/shared/services/books/books';
 
 @Component({
@@ -16,6 +17,7 @@ export class HomePage implements OnInit {
   constructor(
     private booksSrv: Books,
     private readonly router: Router,
+    private readonly authSrv: Auth,
   ) {}
 
   async ngOnInit() {
@@ -23,7 +25,8 @@ export class HomePage implements OnInit {
     console.log(this.books);
   }
 
-  public logOut() {
+  public async logOut() {
+    await this.authSrv.logOut();
     this.router.navigate(['/login']);
   }
 

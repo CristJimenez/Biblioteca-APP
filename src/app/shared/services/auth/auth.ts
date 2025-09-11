@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth as AngularAuth, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth as AngularAuth, createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
 import { IUser } from 'src/app/interfaces/user.interface';
 
 @Injectable({
@@ -32,6 +32,14 @@ export class Auth {
         password
       );
       console.log(resp);
+    } catch (error) {
+      console.log((error as any).message);
+    }
+  }
+
+  async logOut() {
+    try {
+      await signOut(this.afb);
     } catch (error) {
       console.log((error as any).message);
     }
