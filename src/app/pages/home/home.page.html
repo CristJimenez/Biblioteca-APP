@@ -1,20 +1,35 @@
 <ion-menu side="end" contentId="main-content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu Content</ion-title>
+      <div class="ion-padding"></div>
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-title>PROFILE</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
-    <button (click)="logOut()">Log Out</button>
+    <app-button
+    type="button"
+    color="danger"
+    value="Log Out"
+    icon="log-out-outline"
+    (click)="logOut()"
+    ></app-button>
   </ion-content>
 </ion-menu>
 <div class="ion-page" id="main-content">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <div class="ion-padding"></div>
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-title>BOOKS</ion-title>
       <ion-buttons slot="end">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
+    </ion-toolbar>
+    <ion-toolbar>
+      <ion-searchbar></ion-searchbar>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
@@ -26,7 +41,7 @@
                   {{ book.title }}
               </ion-card-title>
               <ion-card-subtitle>
-                  {{ book.authors.name }}
+                  {{ book.authors }}
               </ion-card-subtitle>
             </ion-card-header>
           

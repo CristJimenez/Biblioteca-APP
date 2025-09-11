@@ -31,6 +31,7 @@ export class LoginPage implements OnInit {
         this.password.value,
       );
       this.router.navigate(['/home']);
+      this.loginForm.reset();
     } catch (error) {
       console.log(error);
     }

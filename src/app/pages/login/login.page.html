@@ -1,4 +1,4 @@
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" class="ion-padding">
   <form
   [formGroup]="loginForm"
   (ngSubmit)="doLogin()">
@@ -37,7 +37,8 @@
               type="submit"
               color="primary"
               [disabled]="loginForm.invalid"
-              value="Login"
+              value="Log In"
+              icon="log-in-outline"
               ></app-button>
             </ion-col>
           </ion-row>
