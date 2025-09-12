@@ -1,9 +1,9 @@
 <ion-menu side="end" contentId="main-content">
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
       <div class="ion-padding"></div>
     </ion-toolbar>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
       <ion-title>PROFILE</ion-title>
     </ion-toolbar>
   </ion-header>
@@ -19,35 +19,41 @@
 </ion-menu>
 <div class="ion-page" id="main-content">
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
       <div class="ion-padding"></div>
     </ion-toolbar>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
       <ion-title>BOOKS</ion-title>
       <ion-buttons slot="end">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
     </ion-toolbar>
-    <ion-toolbar>
-      <ion-searchbar></ion-searchbar>
+    <ion-toolbar color="dark">
+      <ion-searchbar
+      [debounce]="1000"
+      (ionInput)="searchBook($event)"
+      ></ion-searchbar>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
       @for (book of books; track $index) {
-          <ion-card>
+          <ion-card color="light" class="ion-padding">
             <img [src]="book.formats['image/jpeg']" />
             <ion-card-header>
               <ion-card-title>
                   {{ book.title }}
               </ion-card-title>
               <ion-card-subtitle>
-                  {{ book.authors }}
+                  {{ book.authors[0]?.name }} <br>
+                  {{ book.authors[0]?.birth_year }} - {{ book.authors[0]?.death_year }}
               </ion-card-subtitle>
             </ion-card-header>
-          
-            <ion-card-content>
-              {{ book.summaries }}
-            </ion-card-content>
+
+            <app-button
+            type="button"
+            color="secondary"
+            value="Make reservation"
+            ></app-button>
           </ion-card>
       }
   </ion-content>

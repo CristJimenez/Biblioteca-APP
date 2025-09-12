@@ -14,7 +14,12 @@ export class Books {
   ) {}
 
   getBooks() {
-    return this.httpProv.getUrl<any>(this.apiUrl).then(data => data.results);
+    return this.httpProv.getUrl<any>(`${this.apiUrl}`).then(data => data.results);
+  }
+
+  searchBook(key: string) {
+    const query = encodeURIComponent(key.trim());
+    return this.httpProv.getUrl<any>(`${this.apiUrl}/?search=${query}`).then(data => data.results);
   }
   
 }

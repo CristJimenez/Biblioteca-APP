@@ -23,6 +23,10 @@ const routes: Routes = [
     data: {authGuardPipr: isNotLogged},
   },
   {
+    path: 'index',
+    loadChildren: () => import('./pages/index/index.module').then( m => m.IndexPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'login',
     pathMatch: 'full'

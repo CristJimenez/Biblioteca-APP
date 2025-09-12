@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URL_BOOKS: "https://gutendex.com/books/",
+  URL_BOOKS: "https://gutendex.com/books",
   FIREBASE_CONFIG: {
   apiKey: "AIzaSyD98jAHoRHsBtSWRUb1dkSGAKuTrFXOzqo",
   authDomain: "fir-database-af0c7.firebaseapp.com",

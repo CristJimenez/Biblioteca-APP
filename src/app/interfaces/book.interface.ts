@@ -1,5 +1,5 @@
 export interface IBook {
-    authors: {name: string, birth_year: number, death_year: number},
+    authors: {name: string, birth_year: number, death_year: number}[],
     bookshelves: string[],
     copyright: boolean | null,
     download_count: number,
@@ -10,7 +10,7 @@ export interface IBook {
     subjects: string[],
     summaries: string[],
     title: string,
-    translators: {name: string, birth_year: number, death_year: number},
+    translators: {name: string, birth_year: number, death_year: number}[],
 }
 
 interface Format {
