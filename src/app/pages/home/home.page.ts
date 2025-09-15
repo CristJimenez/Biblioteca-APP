@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { Auth } from 'src/app/core/providers/auth/auth';
 import { IBook } from 'src/app/interfaces/book.interface';
-import { Auth } from 'src/app/shared/services/auth/auth';
 import { Books } from 'src/app/shared/services/books/books';
 
 @Component({
@@ -18,8 +18,8 @@ export class HomePage implements OnInit {
   constructor(
     private booksSrv: Books,
     private readonly router: Router,
-    private readonly authSrv: Auth,
     private menuCtrl: MenuController,
+    private readonly authSrv: Auth
   ) {}
 
   async ngOnInit() {

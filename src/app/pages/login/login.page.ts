@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Auth } from 'src/app/core/providers/auth/auth';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginPage implements OnInit {
 
   constructor(
     private readonly router: Router,
+    private readonly authSrv: Auth,
   ) {
     this.intiForm();
   }
@@ -23,6 +25,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {}
 
   public async doLogin() {
+    await this.authSrv.logIn(this.email.value, this.password.value);
     this.router.navigate(['/home']);
     this.loginForm.reset();
   }
